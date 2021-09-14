@@ -73,7 +73,7 @@ button[type=submit]:hover {
 
 <div class="container">
   <h2 style="text-align: center;">Meal Details</h2>
-  <marquee behavior="" direction=""><h3 style="display: flex; align-items: center; justify-content: center;"><i class="fas fa-user-circle" style="margin-right: 8px;"></i>Name:- Utshab Day</h3></marquee><br><br>
+  <marquee behavior="" direction=""><h3 style="display: flex; align-items: center; justify-content: center;"><i class="fas fa-user-circle" style="margin-right: 8px;"></i>Name:- Utsab Dey</h3></marquee><br><br>
   <form name="meal">
     <div class="form-group">
         <label for="Date">Select Date</label>
@@ -114,7 +114,7 @@ button[type=submit]:hover {
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Thank you Utshab Da......      Your Data has Been Submitted Successfully in My Database.....!"))
+      .then(response => alert("Thank you Utsab Da......      Your Data has Been Submitted Successfully in My Database.....!"))
       .catch(error => console.error('Error!', error.message))
   })
 </script>
