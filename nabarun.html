@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nabarun Manna</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      .container{
+          background-color: rgb(215, 246, 246);
+          padding: 10px;
+      }
+      .container h2{
+          background-color: aqua;
+          padding: 8px;
+          border-radius: 8px;
+          font-weight: 600;
+          margin: 10px 0 10px 0;
+      }
+      .container marquee{
+          background-color: rgb(233, 255, 248);
+          border-radius: 8px;
+          margin: 4px;
+      }
+      input[type=date], .form-control{
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgb(150, 243, 238);
+  background-color: rgb(233, 255, 248);
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+button[type=submit] {
+  background-color: rgb(160, 204, 199);
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: 1px solid rgb(134, 250, 244);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  transition: color 0.5s ease;
+  margin-bottom: 3px;
+}
+
+button[type=submit]:hover {
+  background-color: aqua;
+  color: rgb(0, 0, 0);
+}
+button[type=submit]:active{
+  background-color: rgb(104, 255, 117);
+  color: rgb(0, 0, 0);
+}
+.foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 240, 231);
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+.foot a{
+  color: rgb(0, 0, 0);
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center;">Meal Details</h2>
+  <marquee behavior="" direction=""><h3 style="display: flex; align-items: center; justify-content: center;"><i class="fas fa-user-circle" style="margin-right: 8px;"></i>Name:- Nabarun Manna</h3></marquee><br><br>
+  <form name="meal">
+    <div class="form-group">
+        <label for="Date">Select Date</label>
+        <input type="date" value="date" name="Date">
+        <br><br>
+      <label for="sel1">Select Time</label>
+      <select class="form-control" id="sel1" name="Time">
+        <option selected>****Select****</option>
+        <option>Day</option>
+        <option>Night</option>
+      </select>
+      <br><br>
+      <label for="sel1">Select Meal Type</label>
+      <select class="form-control" id="sel1" name="Meal Type">
+        <option selected>****Select****</option>
+        <option>Veg Meal</option>
+        <option>Meal with Egg (Rs.35)</option>
+        <option>Meal with Fish (Rs.35)</option>
+        <option>Meal with Chicken (Rs.60)</option>
+        <option>Ruti (রুটি)</option>
+      </select>
+      <br><br>
+    </div>
+    <button button type="submit" name="submit" value="Send message" class=" btn-lg btn-block">Submit</button>
+  </form>
+  <footer class="foot" style="text-align: center;">
+    <span>Created By <a href="http://www.biplab.ml" target="_blank">Biplab</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+  </footer>
+</div>
+
+<!-- Script -->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyV4lRinZJHEtNZJwJEKV7FurOApIs3ZCvYHkSB5_AXradqpREHLTdC71nvhbJ3jsMsBQ/exec'
+  const form = document.forms['meal']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you Nabarun Manna......      Your Data has Been Submitted Successfully in My Database.....!"))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
