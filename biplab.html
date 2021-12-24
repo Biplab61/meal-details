@@ -82,7 +82,7 @@ button[type=submit]:active{
   <form name="meal">
     <div class="form-group">
         <label for="Date">Select Date</label>
-        <input type="date" value="date" name="Date">
+        <input type="date" id="Date-Checker-Picker" name="Date">
         <br><br>
       <label for="sel1">Select Time</label>
       <select class="form-control" id="sel1" name="Time">
@@ -124,6 +124,28 @@ button[type=submit]:active{
       .then(response => alert("Thank you Biplab.....    Your Data has Been Submitted Successfully in My Database.....!"))
       .catch(error => console.error('Error!', error.message))
   })
+  
+  
+  
+   //   Date Checker and Picker Js
+
+        var date = new Date();
+        var tdate = date.getDate();
+        var mintDate = date.getDate()-1;
+        var month = date.getMonth()+1;
+        if(tdate<10){
+            tdate = '0' + tdate;
+        }
+        if(tdate<10){
+            month = '0' + tdate;
+        }
+        var year = date.getFullYear();
+        
+        var minDate = year + '-' + month + '-' + tdate;
+        var mintiDate = year + '-' + month + '-' + mintDate;
+        document.getElementById("Date-Checker-Picker").setAttribute('min',mintiDate);
+        document.getElementById("Date-Checker-Picker").value = minDate;
+  
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
