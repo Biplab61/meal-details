@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Biplab Pati</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+      }
+      .container{
+          background-color: rgb(215, 246, 246);
+          padding: 10px;
+          height: 100vh;
+      }
+      .container h2{
+          background-color: aqua;
+          padding: 8px;
+          border-radius: 8px;
+          font-weight: 600;
+          margin: 10px 0 10px 0;
+          text-align: center;
+      }
+      .container marquee{
+          background-color: rgb(233, 255, 248);
+          border-radius: 8px;
+          margin: 4px;
+      }
+      .alldetails{
+          height: 100vh;
+          width: 100%;
+          border: 2px solid rgb(150, 243, 238);
+          background-color: rgb(233, 255, 248);
+          border-radius: 8px;
+      }
+      iframe {
+    height: 100vh;
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    border-radius: 8px;
+ }
+.name{
+          width: 100%;
+          height: auto;
+          border: 2px solid teal;
+          padding: 10px;
+          margin-bottom: 25px;
+          border-radius: 10px;
+      }
+ .name a{
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0px;
+          font-size: 15px;
+          font-weight: 600;
+      }
+.foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 240, 231);
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+.foot a{
+  color: rgb(0, 0, 0);
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2><a href="https://mealdetails.tk/" style="color: black; text-decoration: none;">Meal Details</a></h2>
+  <marquee><h3 style="display: flex; align-items: center; justify-content: center;"><img src="bp.png" style="height: 42px; width: 42px; border-radius: 50%; border: 2px solid white; margin-right: 8px;" alt="">Name:- Biplab Pati</h3></marquee><br><br>
+
+  <div class="alldetails">
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSfHcSHVYf93Z_WyoyOCUFh6vpFBybJtepAxhU8oZaIpd_xqjFOumpfh28f6r0PTSKkPltuFiQmDrNt/pubhtml?widget=true&amp;headers=false"></iframe>
+  </div>
+  
+  <footer class="foot" style="text-align: center;">
+    <span>Created By <a href="http://www.biplab.ml" target="_blank">Biplab</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+  </footer>
+</div>
+
+<!-- Script -->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxK9QxoNjZ6faBUVoRCC1McmImwJJbcjEOiP53ZjF6AsgNal0otCvV50cIeb86EgGJJow/exec'
+  const form = document.forms['meal']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you Biplab.....    Your Data has Been Submitted Successfully in My Database.....!"))
+      .catch(error => console.error('Error!', error.message))
+  })
+  
+  
+  
+   //   Date Checker and Picker Js
+
+        var date = new Date();
+        var tdate = date.getDate();
+        var mintDate = date.getDate()-1;
+        var month = date.getMonth()+1;
+        if(tdate<10){
+            tdate = '0' + tdate;
+        }
+        if(tdate<10){
+            month = '0' + tdate;
+        }
+        var year = date.getFullYear();
+        
+        var minDate = year + '-' + month + '-' + tdate;
+        var mintiDate = year + '-' + month + '-' + mintDate;
+        document.getElementById("Date-Checker-Picker").setAttribute('min',mintiDate);
+        document.getElementById("Date-Checker-Picker").value = minDate;
+  
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
