@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Biplab Pati Login Page</title>
+    <title>Login</title>
     <style>
 *, *:before, *::after
 {
@@ -126,10 +126,23 @@ button:hover{
         <label for="password">Password</label>
         <input type="password" name="Upass" placeholder="Enter your Password">
 
-        <button name="log" id="logButton" value="Login" onclick="myPage()">Login</button>
+        <button name="log" id="logButton" value="Login" onclick="myPage()" type="button">Login</button>
 
     </form>
     <script>
+         // Disable Right Click
+        document.addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        },false)
+
+        // Disable Shortcut Keys
+        document.addEventListener("keydown",function(e){
+            if(e.ctrlKey || e.keycode==123){
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        });
+        
         function myPage(){
             var un =document.forms["myForm"]["Uname"].value;
             var pw =document.forms["myForm"]["Upass"].value;
