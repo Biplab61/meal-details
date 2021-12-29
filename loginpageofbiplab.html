@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <title>Biplab Pati Login Page</title>
+    <style>
+*, *:before, *::after
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Design And Developed By Biplab Pati visit biplab.ml for mor details */
+body{
+    background-image: linear-gradient(to right top, #be96ad, #b7a1bf, #adaccc, #a5b7d4, #a0c1d6, #98c4d6, #91c7d4, #8ccacf, #78c8cb, #62c5c5, #48c3be, #26c0b6);
+}
+
+.container{
+    width: 450px;
+    height: 540px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.circle1, .circle2{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1{
+    background: linear-gradient(blue, #bf23f6);
+    left: -80px;
+    top: -50px;
+}
+.circle2{
+    background: linear-gradient(to right, #ff512f, yellow);
+    right: -40px;
+    bottom: -50px;
+}
+form{
+    width: 450px;
+    height: 540px;
+    background-color: rgba(255,255,255,0.07);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    backdrop-filter: blur(9px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form{
+    color: white;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+form h2{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 42px;
+    text-align: center;
+}
+form h2 span{
+    display: block;
+    font-size: 15px;
+    font-weight: 300px;
+}
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500px;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border:none;
+    border-radius: 6px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 300px;
+    color: #ffffff;
+}
+::placeholder{
+    color: #ffffff;
+    font-weight: 600;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    height: 46px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding: 15px 0;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+}
+button:hover{
+    background: linear-gradient(to right, #ff512f, yellow);
+    color: white;
+}
+#partical-design-js{
+    height: 100vh;
+    width: 100%;
+}
+    </style>
+
+</head>
+<body>
+    <div id="partical-design-js">
+    <div class="container ">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+    <form name="myForm" method="post" action="#">
+        <h2>Welcome Back
+            <span>Login to your Account</span>
+        </h2>
+        <label for="username">Username</label>
+        <input type="text" name="Uname" placeholder="Enter your Username">
+
+        <label for="password">Password</label>
+        <input type="password" name="Upass" placeholder="Enter your Password">
+
+        <button name="log" id="logButton" value="Login" onclick="myPage()">Login</button>
+
+    </form>
+</div>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+    <script>
+        function myPage(){
+            var un =document.forms["myForm"]["Uname"].value;
+            var pw =document.forms["myForm"]["Upass"].value;
+            if(un == "Biplab" && pw == "Biplab@12"){
+                window.location.href="mealdetails&price.html";
+            }
+            else{
+                alert("Invalid UserName and Password........! Please try Again........")
+            }
+        }
+    </script>
+</body>
+</html>
